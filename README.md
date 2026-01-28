@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RJR Attendance Management System
 
-## Getting Started
+A modern, mobile-responsive Attendance Management Web Application built with Next.js, Prisma, and Supabase.
 
-First, run the development server:
+## 🚀 Features
 
+### Authentication
+- Login/Register using Supabase Auth
+- Role-based access (Admin & Employee)
+
+### Employee Management (Admin)
+- Add, edit, delete employees
+- Store employee details: Name, ID, Department, State, Mobile
+
+### Attendance System
+- **Check In/Check Out** functionality
+- Automatic working hours calculation
+- Date and time tracking
+
+### Daily Permission System
+- **2-hour (120 minutes) daily limit**
+- Permission request with start time, end time, and reason
+- Automatic duration calculation
+- Extra time tracking when exceeding limit
+- Clear indication of overtime in reports
+
+### Leave Management
+- **4 leave days per month** limit
+- Leave requests with date range and reason
+- Automatic validation against monthly quota
+- Admin approval/rejection system
+
+### Dashboards
+
+**Employee Dashboard:**
+- Today's attendance status
+- Used permission time
+- Extra permission time alerts
+- Remaining leave days
+- Monthly summary
+
+**Admin Dashboard:**
+- Total employees count
+- Daily attendance overview
+- Permission usage reports
+- Extra time monitoring
+- Leave request management
+
+### UI/UX Features
+- **Modern cyan color theme**
+- Glassmorphism effects
+- Responsive design (Mobile, Tablet, Desktop)
+- Smooth animations with Framer Motion
+- Sidebar navigation (Desktop)
+- Bottom navigation (Mobile)
+- Toast notifications
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Database:** Supabase (PostgreSQL)
+- **ORM:** Prisma
+- **Authentication:** Supabase Auth
+- **Styling:** Tailwind CSS
+- **UI Components:** Custom components with Radix UI patterns
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+
+## 📦 Installation
+
+1. Clone the repository
+2. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Set up environment variables in `.env`:
+```env
+DATABASE_URL="your-supabase-connection-string"
+DIRECT_URL="your-supabase-direct-connection-string"
+NEXT_PUBLIC_SUPABASE_URL="your-supabase-url"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="your-supabase-anon-key"
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Set up the database:
+```bash
+npx prisma generate
+npx prisma db push
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. Run the development server:
+```bash
+npm run dev
+```
 
-## Learn More
+6. Open [http://localhost:3000](http://localhost:3000)
 
-To learn more about Next.js, take a look at the following resources:
+## 📊 Database Schema
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **User:** Authentication and role management
+- **Employee:** Employee details and profiles
+- **Attendance:** Check-in/check-out records
+- **Permission:** Permission requests with time tracking
+- **LeaveRequest:** Leave applications with approval status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design Features
 
-## Deploy on Vercel
+- **Color Palette:** Cyan-based gradient theme
+- **Components:** Rounded cards with shadows
+- **Typography:** Geist Sans font family
+- **Responsive:** Mobile-first approach
+- **Animations:** Smooth transitions and micro-interactions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📱 Mobile Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Sticky bottom navigation
+- Touch-friendly interface
+- Responsive tables and cards
+- Slide-out mobile menu
+
+## 🔒 Security
+
+- Supabase authentication
+- Role-based access control
+- Secure API routes
+- Environment variable protection
+
+## 📈 Future Enhancements
+
+- Export reports (CSV/PDF)
+- Advanced filtering and search
+- Email notifications
+- Biometric attendance
+- Geolocation tracking
+
+## 👨‍💻 Development
+
+Built by RJR Team with ❤️ using modern web technologies.
+
+## 📄 License
+
+All rights reserved.
+"# attendance_rjr" 
